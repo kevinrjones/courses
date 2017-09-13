@@ -1,0 +1,20 @@
+﻿@model IEnumerable<NewTodoModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1>Todo List</h1>
+
+<ul>   
+    @(2<1)<br/>
+    @foreach(var item in Model)
+    {
+        <span>Time is</span>@DateTime.Now<span>ddd</span>
+        @Html.Partial("_TodoListItem", item)
+    }
+</ul>
+
+<div>
+    @Html.ActionLink("New User", "New") <br/>    
+</div>

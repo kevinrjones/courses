@@ -1,0 +1,49 @@
+﻿@model Shoes.Models.DisplayShoeVM
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Shoe</h2>
+
+@*@using (Ajax.BeginForm("Create", new {}, new AjaxOptions{UpdateTargetId = "isDone"}))
+{
+    <fieldset>
+        @Html.LabelFor(m => m.Colour) @Html.TextBoxFor(m => m.Colour) @Html.ValidationMessageFor(m => m.Colour) <br/>
+        @Html.LabelFor(m => m.Type) @Html.TextBoxFor(m => m.Type) @Html.ValidationMessageFor(m => m.Type) <br/>
+        @Html.LabelFor(m => m.Size) @Html.TextBoxFor(m => m.Size) @Html.ValidationMessageFor(m => m.Size) <br/>
+        @Html.LabelFor(m => m.OwnerEmail) @Html.EditorFor(m => m.OwnerEmail)<br/>
+    </fieldset>
+    <input type="submit" value="New Shoe" />
+}
+
+*@
+
+@using (Html.BeginForm("Create", "Shoe", FormMethod.Post, new {id = "create"}))
+{
+    <fieldset>
+        @Html.LabelFor(m => m.Colour) @Html.TextBoxFor(m => m.Colour) @Html.ValidationMessageFor(m => m.Colour) <br/>
+        @Html.LabelFor(m => m.Type) @Html.TextBoxFor(m => m.Type) @Html.ValidationMessageFor(m => m.Type) <br/>
+        @Html.LabelFor(m => m.Size) @Html.TextBoxFor(m => m.Size) @Html.ValidationMessageFor(m => m.Size) <br/>
+        @Html.LabelFor(m => m.OwnerEmail) @Html.EditorFor(m => m.OwnerEmail)<br/>
+    </fieldset>
+    <input type="submit" value="New Shoe" />
+}
+<div id="isDone"></div>
+
+
+@section scripts
+{
+    <script type="text/javascript">
+        var shoeCreateUrl = '@Url.Action("Create", "Shoe")';
+    </script>
+    <script type="text/javascript">
+
+        $.validator.addMethod("shoesize", function (val, elem, param) {
+            return this.optional(elem) || parseInt(val) > parseInt(param);
+        });
+
+        $.validator.unobtrusive.adapters.addSingleVal("shoesize", "shoesize", "shoesize");
+    </script>
+}

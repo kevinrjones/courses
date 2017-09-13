@@ -1,0 +1,23 @@
+﻿@model User
+
+@{
+    ViewBag.Title = "Todos";
+}
+
+<h2>Todos</h2>
+@Html.DisplayFor(m => m.EMail)
+@if (TempData["Message"] != null)
+{
+    <h3>@TempData["Message"]</h3>
+}
+<ul>
+    @foreach (var model in Model.Todos)
+    {
+        @Html.Partial("_TodoListItem", model)
+    }
+</ul>
+
+@Html.ActionLink("New", "New")
+
+<div id="todoDetails"></div>
+

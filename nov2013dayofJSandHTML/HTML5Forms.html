@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <form>
+        <p>
+            <input type="email" placeholder="Email"/>
+        </p>
+        <p>
+            <input type="url" placeholder="URL"/>
+        </p>
+        <p>
+            <input type="tel" placeholder="Telephone" autofocus="true" autocomplete="false"/>
+        </p>
+        <p>
+            <input type="range" max="1000" min="100">
+        </p>
+        <p>
+            <input type="number" max="1000" min="0">
+        </p>
+        <p>
+            <input type="text" placeholder="name" id="myname"/>
+        </p>
+        <p>
+            <input type="date">
+        </p>
+        <p>
+            <input type="color">
+        </p>
+        <p>
+            <input type="submit" value="Click me!"/>
+        </p>
+        <p contenteditable="true">
+            This is content
+        </p>
+    </form>
+    <script src="jquery-1.9.0.js"></script>
+<script>
+    $('#myname').change(function(evt){
+        if($('#myname').val() === "Kevin"){
+            evt.target.setCustomValidity("");
+        } else {
+            evt.target.setCustomValidity("Wrong name");
+        }
+    })
+</script>
+</body>
+</html>

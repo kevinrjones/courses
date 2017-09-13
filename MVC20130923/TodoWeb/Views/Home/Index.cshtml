@@ -1,0 +1,20 @@
+﻿@model IEnumerable<User>
+
+<h2>Hello World</h2>
+
+
+The date is @DateTime.Now
+
+@{ int i = 0;}
+
+<ul>
+    @foreach (var user in Model)
+    {
+        @:Name: 
+        <li>@Html.ActionLink(user.EMail, "Get", new { id = i++ }, new {@class = "homelist"}) </li>
+        @*<li>@user.Name</li>*@
+    }
+</ul>
+
+@Html.ActionLink("New User", "New")
+

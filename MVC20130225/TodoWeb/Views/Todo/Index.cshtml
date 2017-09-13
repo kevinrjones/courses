@@ -1,0 +1,18 @@
+﻿@model IEnumerable<TodoViewModel>
+@{
+    ViewBag.Title = "title";
+}
+
+<h2>title</h2>
+<ul>
+    @foreach (var item in Model)
+    {
+        @Html.Partial("_TodoItemListElement", item)
+    }
+
+</ul>
+<div>@TempData["message"]</div>
+<div id="targetId"></div>
+
+<input type="button" id="signalr" value="click me"/>
+

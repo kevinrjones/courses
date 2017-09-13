@@ -1,0 +1,14 @@
+﻿@model TodoList.Models.UserModel
+
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>New</h2>
+
+@using(Html.BeginForm("Create", "User", FormMethod.Post))
+{
+    @Html.LabelFor(m=> m.Name) @Html.TextBoxFor(m => m.Name) @Html.ValidationMessageFor(m => m.Name)<br/>
+    @Html.LabelFor(m=> m.Age) @Html.TextBoxFor(m => m.Age) @Html.ValidationMessageFor(m => m.Age)<br/>
+    <input type="submit" value="New User"/>
+}

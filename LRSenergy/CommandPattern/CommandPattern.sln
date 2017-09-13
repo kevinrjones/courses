@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandPattern", "CommandPattern\CommandPattern.csproj", "{5C3FC955-3507-4861-B457-2677F4450DF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandLib", "CommandLib\CommandLib.csproj", "{9A683E39-EB61-45B1-A4E8-BE3256355F20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Checkpointing", "Checkpointing\Checkpointing.csproj", "{39AB1914-CE01-4A08-A8A3-A3E61FB14B6D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C3FC955-3507-4861-B457-2677F4450DF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C3FC955-3507-4861-B457-2677F4450DF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C3FC955-3507-4861-B457-2677F4450DF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C3FC955-3507-4861-B457-2677F4450DF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A683E39-EB61-45B1-A4E8-BE3256355F20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A683E39-EB61-45B1-A4E8-BE3256355F20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A683E39-EB61-45B1-A4E8-BE3256355F20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A683E39-EB61-45B1-A4E8-BE3256355F20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39AB1914-CE01-4A08-A8A3-A3E61FB14B6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39AB1914-CE01-4A08-A8A3-A3E61FB14B6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39AB1914-CE01-4A08-A8A3-A3E61FB14B6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39AB1914-CE01-4A08-A8A3-A3E61FB14B6D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

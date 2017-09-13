@@ -1,0 +1,15 @@
+﻿@model TodoViewModel
+
+
+<li>
+    <span>
+        @Html.DisplayFor(m => m.Who, Model.Who)
+    </span>
+    <span>
+        @Html.ActionLink(Model.What, "Get", "Todo", new{id = Model.Id}, new{@class="lineClass"})
+        @*@Ajax.ActionLink(Model.What, "Get", "Todo", new{id = Model.Id}, new AjaxOptions{UpdateTargetId = "targetId"}, new{@class="lineClass"})*@
+    </span>
+    <span>
+        @Html.DisplayFor(m => m.When, "DateTime")
+    </span>
+</li>    

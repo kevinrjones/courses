@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-1.9.1.js"></script>
+    <style>
+        .highlight {
+            background-color: silver;
+        }
+    </style>
+    <script type="text/javascript">
+        var numbers = [1, 2, 3, 4, 5];
+        $(function() {
+            $('li').mouseover(function() {
+                $(this).addClass('highlight');
+            }).mouseout(function() {
+                $(this).removeClass('highlight');
+            });
+
+            var todo$ = $('#todo');
+
+            $('form').submit(function () {
+                $.post(this.action,
+                    $(this).serialize(),
+                    function (data) {
+                        $(data).each(function () {
+                            $("<li></li>").text(this.Who).appendTo(todo$);
+                        });
+                    }, "json");
+                return false;
+            });
+        });
+        
+        // foreach()
+    </script>
+</head>
+<body>
+    <h2>Hello World</h2>
+    <ul class="frameworks">
+        <li>MVC</li>
+        <li>Struts</li>
+        <li>node</li>
+        <li>Play</li>
+    </ul>
+    <ul>
+        <li>Kevin</li>
+        <li>Simon</li>
+    </ul>
+    
+    <form action="/todo/update" method="POST">        
+        <input type="submit" value="Click Me"/>
+    </form>
+    
+    <ul id="todo"></ul>
+</body>
+</html>

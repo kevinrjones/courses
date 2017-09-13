@@ -1,0 +1,42 @@
+﻿@model TodoCreationViewModel
+
+@{
+    ViewBag.Title = "New Todo";
+}
+
+<h2>New Todo</h2>
+
+@Html.ValidationSummary()
+
+@using (Html.BeginForm("Create", "Todo", FormMethod.Post, new { id = "createTodo" }))
+{
+    <div>
+        Description: @Html.TextBoxFor(m => m.Description) @Html.ValidationMessageFor(m => m.Description)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Priority): @Html.DropDownList("priority", Model.Priorities)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.FinishBy) @Html.EditorFor(m => m.FinishBy, new { Name = "FinishBy" })
+    </div>
+    <div>
+        @Html.LabelFor(m => m.ShoeColor): @Html.EditorFor(m => m.ShoeColor)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.DoBy) @Html.TextBoxFor(m => m.DoBy) @Html.ValidationMessageFor(m => m.DoBy)
+    </div>
+    <div>
+        <input type="submit" value="Add New Todo" />
+    </div>
+}
+@section scripts{
+    <script src="~/Scripts/myvalidator.js"></script>
+    <script type="text/javascript">
+        $.validator.unobtrusive.adapters.addBool("scooby", "inTheMysteryGang");
+    //$('#createTodo').validate(
+        //    {
+        //        rules: { DoBy: "inTheMysteryGang" }
+        //    }
+        //);
+    </script>
+}

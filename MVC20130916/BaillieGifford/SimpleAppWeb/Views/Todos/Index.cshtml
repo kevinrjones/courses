@@ -1,0 +1,26 @@
+﻿@model UserTodos
+
+@{
+    ViewBag.Title = "Todos";    
+}
+
+<h2>Todo List For:</h2>
+@Model.User.Name (@Html.DisplayFor(m => m.User.EMailAddress))
+
+<h1>@TempData["message"]</h1>
+
+<ul class="todoList">
+    @foreach (var item in Model.Todos)
+    {
+        @Html.Partial("_TodoListItemAjax", item)
+    }
+</ul>
+<div id="detailsId">
+    
+</div>
+
+@Html.ActionLink("New Todo", "New")
+
+@section scripts{
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+}

@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+    <body>
+        <div>
+            <p>
+                <input type="text" data-bind="value: firstName, valueUpdate: 'afterkeydown'"/>
+            </p>
+            <p>
+                <span data-bind="text: firstName"></span>
+            </p>
+            <p>
+                <span data-bind="text: surname"></span>
+            </p>
+            <p>
+                <span data-bind="text: fullname"></span>
+            </p>
+            <p>
+                <input type="button" value="Click Me" data-bind="click: onclick"/>
+            </p>
+            <ul data-bind="foreach: children">
+                <li data-bind="text: name"></li>
+            </ul>
+
+        </div>
+        <script src="/Scripts/jquery-1.8.2.js"></script>
+        <script src="/Scripts/knockout-2.2.0.debug.js"></script>
+        <script src="/Scripts/app.js"></script>
+    </body>
+</html>

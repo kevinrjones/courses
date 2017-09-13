@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <canvas id="canvas" width="540" height="360" style="border: 1px solid black"></canvas>
+    <script src="scripts/jquery-2.1.1.js"></script>
+    <script src="Mandelbrot.js"></script>
+    <script>
+        $(function () {
+            var canvas = $('#canvas')[0];
+            var ctx = canvas.getContext('2d');
+            var imageData = ctx.createImageData(canvas.width, canvas.height);
+
+
+            var ratio = canvas.height / canvas.width;
+            // full size
+            var minX = -2;
+            var maxX = 1;
+            var minY = -1;
+            var yGap = (Math.abs(minX) + Math.abs(maxX)) * ratio;
+            var maxY = minY + yGap;
+
+            var generator = mandelbrot({ minX: minX, maxX: maxX, minY: minY, maxY: maxY, width: imageData.width, height: imageData.height, maxEscapeIterations: 4000 });
+            generator.generate();
+            var colors = generator.colorData;
+
+            var pixels = imageData.data;
+            var pixel = 0;
+
+            for (var y = 0; y < imageData.height; y++) {
+                for (var x = 0; x < imageData.width; x++) {
+                    var ndx = (y * imageData.width) + x;
+
+                    pixels[pixel++] = (colors[ndx] >> 16);
+                    pixels[pixel++] = ((colors[ndx] & 0x00ff00) >> 8);
+                    pixels[pixel++] = (colors[ndx] & 0x0000ff);
+                    pixels[pixel++] = 255;
+                }
+            }
+            ctx.putImageData(imageData, 0, 0);
+        });
+
+
+    </script>
+
+</body>
+</html>

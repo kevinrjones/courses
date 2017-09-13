@@ -1,0 +1,20 @@
+﻿@model TodoWeb.Controllers.SessionViewModel
+
+@{
+    ViewBag.Title = "title";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm("Create", "Session", new {Model.ReturnUrl}))
+{
+    <div>
+        @Html.LabelFor(m => m.Name): @Html.TextBoxFor(m => m.Name)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Password): @Html.PasswordFor(m => m.Password)
+    </div>
+    <div>
+        <input type="submit" value="Logon" />
+    </div>
+}

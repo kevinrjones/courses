@@ -1,0 +1,34 @@
+http://www.develop.com/technicalstaff/details/kevin-jones 
+kevinj@develop.com https://github.com/kevinrjones/rbsjune2014 
+http://www.jetbrains.com/webstorm/ http://en.wikipedia.org/wiki/JQuery 
+https://developers.google.com/closure/
+https://www.google.co.uk/intl/en/chrome/browser/canary.html 
+https://developer.mozilla.org/En/JavaScript 
+http://www.jibbering.com/faq/faq_notes/closures.html
+http://msdn.microsoft.com/en-us/magazine/cc163419.aspx
+ http://api.jqueryui.com/draggable/ 
+http://jqueryui.com/sortable/ (Demo) 
+http://jqueryui.com/themeroller/ (Demo
+)http://en.wikipedia.org/wiki/Npm_(software) 
+http://www.jetbrains.com/webstorm/webhelp/node-js-and-npm.html 
+http://en.wikipedia.org/wiki/Cross-origin_resource_sharing
+http://en.wikipedia.org/wiki/Socket.IO 
+http://en.wikipedia.org/wiki/WebSocket 
+http://en.wikipedia.org/wiki/Comparison_of_WebSocket_implementations 
+http://en.wikipedia.org/wiki/SignalR
+http://en.wikipedia.org/wiki/Angularjs 
+http://en.wikipedia.org/wiki/KnockoutJS 
+http://en.wikipedia.org/wiki/RSDL 
+http://spf13.com/post/soap-vs-rest 
+https://connect.liveperson.com/community/developers/blog/2014/02/04/my-own-angle-on-angularjs--pros-and-cons 
+http://ruoyusun.com/2013/05/25/things-i-wish-i-were-told-about-angular-js.html
+http://www.amazon.co.uk/Catch-22-Anniversary-Edition-Joseph-Heller/dp/0099529122/ 
+http://www.youtube.com/watch?v=L4FJ_kuO9Rc (Performance using AngularJS, see 8:35mins)
+http://en.wikipedia.org/wiki/Representational_state_transfer 
+http://en.wikipedia.org/wiki/Backbone.js 
+http://en.wikipedia.org/wiki/Node.js 
+http://en.wikipedia.org/wiki/Ember.js
+http://en.wikipedia.org/wiki/MEAN 
+http://en.wikipedia.org/wiki/Selenium_(software) 
+http://en.wikipedia.org/wiki/Jasmine_(JavaScript_framework) 
+https://www.npmjs.org/package/karma

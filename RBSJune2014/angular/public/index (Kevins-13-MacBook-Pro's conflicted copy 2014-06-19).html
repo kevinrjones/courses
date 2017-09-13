@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Angular</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-route/angular-route.js"></script>
+    <script src="/bower_components/angular-resource/angular-resource.js"></script>
+
+</head>
+<body data-ng-app="app" data-ng-controller="ListController">
+
+<h2>Angular</h2>
+
+<kj-simple>World</data-kj-simple>
+
+<div>
+    <span ng-bind="currentDate | date:'fullDate'"></span>
+    <span ng-bind="currentTime"></span>
+</div>
+
+<div data-ng-view></div>
+
+<script id="/template/lists.html" type="text/ng-template">
+
+    <kj-lists title="Lists" lists="lists" open="openList(id)"></kj-lists>
+    <hr/>
+    <h2>Lists</h2>
+    <ul>
+        <li ng-repeat="list in lists">
+            <span ng-click="openList(list.id)">{{ list.title }}</span>
+        </li>
+    </ul>
+</script>
+
+<script id="/template/list.html" type="text/ng-template">
+    <div>
+        <span>{{list.title}}</span>
+    </div>
+    <div>
+        Title: <input type="text" ng-model="list.title"/>
+    </div>
+
+    <ul>
+        <li ng-repeat="activity in list.activities
+                                | orderBy:'priority'">{{ activity.name }}
+        </li>
+    </ul>
+
+</script>
+
+
+<script src="/app/app.js"></script>
+</body>
+</html>

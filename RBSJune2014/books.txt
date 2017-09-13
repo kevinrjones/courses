@@ -1,0 +1,9 @@
+JavaScript Patterns
+JavaScript Allonge
+AngularJS in Action
+JavaScript the good Parts
+jQuery in Action
+Syncfusion: 'Succintly series'
+Henriquat (Ingo Rammer; Christian Weyer)
+John Lindquist: egghead.io - Angular Videos
+Scott Allen: 'Ode To Code'

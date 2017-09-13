@@ -1,0 +1,65 @@
+$("#myelement").draggable(); // to make it draggable
+$("#myelement").children().draggable();
+
+// jquery ui adds a .ui-draggable class -  can use this in our code
+
+// can pass an options object - http://api.jqueryui.com/draggable/
+
+.draggable(
+  {
+    containment: "#someelment",
+    axis: "y",
+    stack: "[someselector]" // stacks against anything else that matches the selector, e.g. ".ui-draggable"
+  }
+);
+
+can also do
+
+.draggable('option', 'stack', '[selector of elements to stack]'
+e.g.
+.draggable('option', 'stack', '.ui-draggable'
+
+); // call the option 'method'
+
+other options
+
+snap: "[list of selectors]"
+handle: '[selector of element that can be clicked on to drag]'
+
+helper: ["clone" | "original"] // use clone when doing a drop
+helper: function(){
+return $("<div>some other html"); // this becomes a clone
+}
+
+///////// drop
+
+$("dropelement").droppable({
+  accept: "[selector]", // selector of elements that can be dropped here
+  drop: function(e, ui){
+    ui.draggable.remove();  // ui is the element being dragged
+  }
+});
+
+on draggable can do
+
+.draggable({
+  revert: "invalid" // revert if dropped on an invalid drop target
+});
+
+
+Can cdd classes during the drag over
+
+.droppable({
+  activeClass: "someClass" // class the droppable gets when a legal drag is happening
+})
+
+
+// sortable
+
+ $('#sortable').sortable({
+        axis: 'y'
+    });
+
+// accordian
+
+$('#accordian').accordion();

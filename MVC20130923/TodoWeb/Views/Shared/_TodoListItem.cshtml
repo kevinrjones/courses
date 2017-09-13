@@ -1,0 +1,8 @@
+﻿@model TodoViewModel
+
+<li style="list-style-type: none">
+    @Ajax.ActionLink(Model.Description, "Show",  new { id = Model.Id }, new AjaxOptions{UpdateTargetId = "todoDetails"})
+    (@Html.DisplayFor(m => m.FinishBy))
+</li>
+
+

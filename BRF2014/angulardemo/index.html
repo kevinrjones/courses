@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body ng-app="app">
+
+<div ng-controller="simpleController">
+    <!--<div>-->
+    <!--<span ng-bind="person.name"></span>-->
+    <!--</div>-->
+
+    <div>
+        <span ng-bind="course.instructor.name" ng-click="showDetails()"></span>
+
+        <div ng-show="course.visible">
+            <p>
+                {{ course.instructor.name}}
+            </p>
+
+            <p>
+                {{course.instructor.course}}
+            </p>
+
+        </div>
+        <ul>
+            <li ng-repeat="s in course.students"><span>{{ s.name }}</span></li>
+        </ul>
+    </div>
+    <div dm-simple></div>
+    <dm-simple course="course.instructor.course">This is text</dm-simple>
+</div>
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+﻿@model List<Shoes.Models.DisplayShoeVM>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>
+    Shoes</h2>
+<ul>
+    @foreach (var shoe in Model)
+    {
+        @Html.Partial("_shoeList", shoe)        
+    }
+</ul>
+
+@Html.ActionLink("Create a New Shoe", "New")<br/>
+
+<input type="button" id='getShoes', value ="Click Me"/>
+
+<div id="showTime"></div>
+
+<ul id="shoes"></ul>

@@ -1,0 +1,18 @@
+https://github.com/kevinrjones/MVC20121119
+
+Books
+=====
+CSS: CSS Mastery; Bulletproof Web Design
+
+
+Security
+========
+http://www.troyhunt.com/2011/11/owasp-top-10-for-net-developers-part-9.html
+Books: Anything by Schneier
+       Mitnick - The Art of Deception
+
+
+Tools
+=====
+routedebugger
+Glimpse

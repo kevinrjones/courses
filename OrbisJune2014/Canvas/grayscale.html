@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<canvas id="canvas" width="600" height="400" style="border: 1px solid black"></canvas>
+<script src="public/bower/jquery/dist/jquery.js"></script>
+<script>
+    $(function () {
+        var canvas = $('#canvas')[0];
+        var ctx = canvas.getContext('2d');
+
+        var img = new Image();
+        img.src = "yacht_race.jpg";
+
+        img.onload = function () {
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            grayScale();
+        };
+
+        function grayScale() {
+            var pixels = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
+            for (var ndx = 0; ndx < pixels.data.length; ndx += 4) {
+                var red = pixels.data[ndx];
+                var green = pixels.data[ndx + 1];
+                var blue = pixels.data[ndx + 2];
+                var gray = red * 0.2126 + green * 0.7152 + blue * 0.0722;
+                //var gray = red * 0.3 + green * 0.59 + blue * 0.11;
+
+                pixels.data[ndx] = gray;
+                pixels.data[ndx + 1] = gray;
+                pixels.data[ndx + 2] = gray;
+            }
+
+            ctx.putImageData(pixels, 0, 0);
+        }
+    });
+
+
+</script>
+
+</body>
+</html>

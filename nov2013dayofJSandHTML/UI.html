@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+<ul data-bind="foreach: users">
+    <li data-bind="text: name"></li>
+</ul>
+
+<div>
+    <span data-bind="text: name"></span>
+</div>
+<div>
+    <input type="text" data-bind="value: name, valueUpdate:'afterkeydown'"/>
+</div>
+<div>
+    <input type="text" data-bind="value: userName, valueUpdate: 'afterkeydown'"/>
+    <button data-bind="click: addUser">Add User</button>
+</div>
+<div>
+    <span data-bind="text: fullName"></span>
+</div>
+
+
+<script src="jquery-1.9.0.js"></script>
+<script src="knockout-3.0.0.js"></script>
+<script src="UI.js"></script>
+</body>
+</html>

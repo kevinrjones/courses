@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link href="public/bower/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+    <link href="public/bower/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet"/>
+    <link href="public/style.css" rel="stylesheet"/>
+    <title></title>
+</head>
+<body ng-app>
+
+<div ng-controller="films.FilmsController as films">
+    <div class="col-md-10">
+        <h2>Add a New Film</h2>
+
+        <form role="form">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" placeholder="Enter title" ng-model="films.title"/>
+            </div>
+            <div class="form-group">
+                <label for="quote">Quote</label>
+                <input type="text" class="form-control" id="quote" placeholder="Quote" ng-model="films.quote"/>
+            </div>
+            <button type="submit" class="btn btn-default" ng-click="films.addFilm(films.title, films.quote)">Add Film
+            </button>
+        </form>
+    </div>
+
+    <div class="col-md-10">
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="film in films.films">
+                <span>{{film.data.title}} by {{ film.data.quote}}</span>
+
+                <div class="button-container">
+                    <button class="btn btn-xs btn-default" data-ng-click="films.deleteFilm(film.key)"><span
+                            class="glyphicon glyphicon-trash"></span></button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script src="public/bower/jquery/dist/jquery.js"></script>
+<script src="public/bower/bootstrap/dist/js/bootstrap.js"></script>
+<script src="public/bower/angular/angular.js"></script>
+
+<script src="public/app/filmsdb.js"></script>
+<script src="public/app/main.js"></script>
+</body>
+</html>

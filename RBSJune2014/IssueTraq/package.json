@@ -1,0 +1,28 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+      "express": "*",
+      "body-parser": "*",
+      "express-session": "*",
+      "cookie-parser": "*",
+      "cookie-session": "*",
+      "static-favicon": "*",
+      "method-override": "*",
+      "morgan": "*",
+      "errorhandler": "*",
+      "ejs": "*",
+      "less-middleware": "*",
+      "passport": "*",
+      "passport-google": "*",
+      "passport-google-oauth": "*",
+      "passport-local": "*",
+      "underscore": "*",
+      "mongoskin": "*",
+      "moment": "*"
+  }
+}

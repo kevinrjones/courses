@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "title";
+}
+
+<h2>New Person</h2>
+
+@using (Html.BeginForm("Create", "Home"))
+{
+    <div>
+        <span>Name: </span>@Html.TextBox("name")
+    </div>
+    <div>
+        <input type="submit" value="Add User"/>    
+    </div>
+}
+
+@*<form action="/home/create" >
+    Name: <input type="text" name="name" id="name"/>
+    <input type="submit" value="Add User"/>
+</form>*@

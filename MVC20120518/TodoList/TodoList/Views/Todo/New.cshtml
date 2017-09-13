@@ -1,0 +1,18 @@
+﻿@model NewTodoModel
+
+@{
+    ViewBag.Title = "foobar";
+}
+
+<h2>New User</h2>
+
+@Html.ValidationSummary(true, "There are errors")
+
+@using(Html.BeginForm("Create", "Todo", FormMethod.Post))
+{
+    @Html.LabelFor(m => m.Title) @Html.TextBoxFor(m => m.Title) @Html.ValidationMessageFor(m=>m.Title) <br/>
+    @Html.LabelFor(m => m.Entry) @Html.TextBoxFor(m => m.Entry) @Html.ValidationMessageFor(m => m.Entry)<br/>
+    @Html.LabelFor(m => m.Completed) @Html.EditorFor(m => m.Completed)<br/>
+    @Html.DropDownListFor(m => m.Priority, new SelectList(Model.PriorityList, "Key", "Value"))<br/>
+    <input type="submit" value="New Todo"/>
+}

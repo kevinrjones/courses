@@ -1,0 +1,7 @@
+﻿body { }
+.wrapper { }
+.table { margin: 0 auto; width: 65%; }
+.row { height: 7.5em; border: #333333 solid 1px; vertical-align: middle; }
+    .row p { line-height: 5em; padding-left: 1em; font-size: 1.5em; }
+.buttons { padding-top: 1em; }
+    .buttons span { font-size: 1.5em;background-color: #cccccc;color: #fff;padding: 0.2em 1em;margin: 0 1em; cursor: pointer;}

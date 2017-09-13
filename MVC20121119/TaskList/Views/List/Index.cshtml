@@ -1,0 +1,23 @@
+﻿@model IList<TaskList.Models.TodoViewModel>
+
+@{
+    ViewBag.Title = "title";
+}
+
+<h2>title - fool!!</h2>
+<h3>@TempData["Message"]</h3>
+<h2>@DateTime.Now Now</h2>
+
+<ul>
+    @foreach (var todo in Model)
+    {
+        @Html.Partial("_TodoList", todo)
+    }
+</ul>
+@Html.ActionLink("Login", "LoginWithGoogle", "List", null, new{@class="myclass"} )
+<br/>
+@Html.ActionLink("Give me more things todo", "New", "List", null, new{@class="myclass"} )
+<br/>
+@Ajax.ActionLink("Update Date", "GetDate", new AjaxOptions{UpdateTargetId = "displaydate"})
+
+@Html.Partial("_date")

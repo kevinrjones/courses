@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/themes/base/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    @RenderBody()
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/signalr")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryui")
+    <script type="text/javascript" src="/signalr/hubs"></script>
+    @*<script src="~/Scripts/ValidationScript.js"></script>*@
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+        $(function () {
+            $.connection.hub.start(function() {
+                $.connection.messageHub.client.onData = function (data) {
+                    console.log(data);
+                };
+            });
+        });
+        $(function () {            
+            $('.dateTime').datepicker({dateFormat: "dd-mm-yy"});
+        });
+        
+        $(function () {
+            $("#signalr").click(function () {
+                $.connection.messageHub.server
+                    .getMessage()
+                    .done(function (data) {
+                        console.log(data);
+                    });
+            });
+        });
+
+    </script>
+</body>
+</html>

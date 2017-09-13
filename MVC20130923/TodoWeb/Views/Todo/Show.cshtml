@@ -1,0 +1,15 @@
+﻿@model TodoViewModel
+
+@{
+    ViewBag.Title = "Todo Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    Priority: @Model.Priority
+</div>
+
+<div>
+    Date: @Html.DisplayFor(m => m.FinishBy)
+</div>

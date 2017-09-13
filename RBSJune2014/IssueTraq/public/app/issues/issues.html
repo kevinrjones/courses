@@ -1,0 +1,28 @@
+<div>
+    <issues-title></issues-title>
+
+    <div>
+        <div>
+            <div class="input-group">
+                <input type="text" ng-model="vm.typeFilter" class="form-control" placeholder="Filter">
+                <span class="input-group-addon glyphicon glyphicon-filter" data-ng-click="vm.filter()"></span>
+            </div>
+        </div>
+        <ul class="list-group" id="issues">
+            <li data-ng-repeat="issue in vm.issues | filter: {type: vm.typeFilter}" class="list-group-item">
+                <span>Title:</span><span>{{issue.title}}</span>
+                <span>Description</span> <span>{{issue.description}}</span>
+                <span>Completion</span> <span>{{issue.completionDate | date:'fullDate'}}</span>
+                <div class="button-container">
+                    <button class="btn btn-xs btn-default" data-ng-click="vm.open(issue.id)"><span class="glyphicon glyphicon-new-window"></span></button>
+                    <button class="btn btn-xs btn-default" data-ng-click="vm.delete(issue.id)"><span class="glyphicon glyphicon-trash"></span></button>
+                    <button class="btn btn-xs btn-default" data-ng-click="vm.edit(issue.id)"><span class="glyphicon glyphicon-pencil"></span></button>
+                </div>
+                </li>
+        </ul>
+    </div>
+    <div>
+        <a data-ng-href="issues/new">New Issue</a>
+    </div>
+
+</div>

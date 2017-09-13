@@ -1,0 +1,13 @@
+﻿@model CreateBoardViewModel
+
+<div>
+    @using (Html.BeginForm("Create", "Boards"))
+    {
+        <div>
+            @Html.LabelFor(m => m.Title) @Html.TextBoxFor(m => m.Title) @Html.ValidationMessageFor(m => m.Title)
+        </div>
+        <div>
+            <input type="submit" value="Create New Board"/>
+        </div>
+    }
+</div>

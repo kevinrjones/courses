@@ -1,0 +1,2 @@
+http://blogs.msdn.com/b/pfxteam/archive/2011/09/28/task-exception-handling-in-net-4-5.aspx
+http://msdn.microsoft.com/en-us/magazine/cc301510.aspx

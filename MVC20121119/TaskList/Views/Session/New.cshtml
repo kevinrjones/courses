@@ -1,0 +1,17 @@
+﻿@model TaskList.Models.User
+
+@{
+    ViewBag.Title = "Logon";
+}
+
+<h2>Logon</h2>
+
+@using (Html.BeginForm("Create", "Session"))
+{
+    @Html.LabelFor(m => m.Name) @: <br/>
+    @Html.TextBoxFor(m => m.Name)  <br/>
+    @Html.LabelFor(m => m.Password) @: <br/>
+    @Html.PasswordFor(m => m.Password)  <br/>
+    
+    <input type="submit" value="Logon"/>
+}

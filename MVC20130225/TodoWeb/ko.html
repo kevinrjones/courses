@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-1.9.1.js"></script>
+    <script src="Scripts/jquery-ui-1.10.0.js"></script>
+    <script src="Scripts/knockout-2.2.1.js"></script>
+    <script type="text/javascript">
+        ko.bindingHandlers.calendar = {
+            init: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
+                $(element).datepicker({ dateFormat: "dd-mm-yy" });
+            }
+        };
+    </script>
+    <script type="text/javascript">
+
+        function User() {
+            var self = this;
+
+            //            self.kids = [{ name: "harry" }, { name: "sam" }, { name: "alex" }];
+            self.kids = ko.observableArray(["harry", "sam", "alex"]);
+
+            self.firstName = ko.observable("Kevin");
+            self.lastName = ko.observable("Jones");
+
+            self.name = ko.computed(function () {
+                return self.firstName() + " " + self.lastName();
+            });
+
+            self.onClick = function() {
+                self.isVisible(true);
+            };
+
+            self.isVisible = ko.observable(false);
+        };
+
+        var user = new User();
+
+        $(function () {
+            ko.applyBindings(user);
+        });
+
+    </script>
+</head>
+<body>
+    <div>
+        First name:
+    </div>
+    <div>
+        <span data-bind="text: firstName"></span>
+    </div>
+    <div>
+        Last name:
+    </div>
+    <div>
+        <span data-bind="text: lastName"></span>
+    </div>
+    <div>
+        Name:
+    </div>
+    <div>
+        <span data-bind="text: name"></span>
+    </div>
+    <div style="background-color: grey" data-bind="visible: isVisible">
+        <span data-bind="text: name"></span>
+        <ul data-bind="foreach: kids">
+            <li data-bind="text: $data"></li>
+        </ul>
+    </div>
+    <div>
+        <input type="text" data-bind="value: firstName, valueUpdate: 'afterkeydown'" placeholder="First Name" /><br />
+        <input type="text" data-bind="calendar: true"/>
+        <input type="button" data-bind="click: onClick" value="Click Me" />        
+    </div>
+</body>
+</html>

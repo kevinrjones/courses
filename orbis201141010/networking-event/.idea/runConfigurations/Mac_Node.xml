@@ -1,0 +1,13 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Mac Node" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="/usr/local/bin/nodemon" path-to-js-file="app.js" node-parameters="--exec /usr/local/bin/node" working-dir="$PROJECT_DIR$">
+    <envs>
+      <env name="DEBUG" value="engine* node app" />
+    </envs>
+    <browser url="http://localhost:3000" />
+    <RunnerSettings RunnerId="NodeJS.debug" />
+    <RunnerSettings RunnerId="NodeJS.run" />
+    <ConfigurationWrapper RunnerId="NodeJS.debug" />
+    <ConfigurationWrapper RunnerId="NodeJS.run" />
+    <method />
+  </configuration>
+</component>

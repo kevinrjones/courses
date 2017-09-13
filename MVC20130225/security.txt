@@ -1,0 +1,2 @@
+http://www.troyhunt.com/2011/11/owasp-top-10-for-net-developers-part-9.html
+http://www.baekdal.com/insights/password-security-usability

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<header>
+    <nav>This is the navigation</nav>
+</header>
+<main>
+
+    <section style="float: left">
+        <h2>News</h2>
+        <progress min="0" max="100" value="60"></progress>
+        <meter min="0" max="100" value="70"></meter>
+    </section>
+
+    <section style="float: left">
+        <h2>Main Content</h2>
+        <form method="POST" action="index.html" >
+            <p>
+                <input type="text" placeholder="Name"/>
+            </p>
+            <p>
+                <span name="content" contenteditable>Fred</span>
+            </p>
+            <p>
+                Color: <input type="color" name="color"/>
+            </p>
+            <p>
+                Date: <input type="date" name="date"/>
+            </p>
+            <p>
+                Email: <input type="email" name="email" required/>
+            </p>
+            <p>
+                Telephone: <input type="tel" name="tel"/>
+            </p>
+            <p>
+                Number: <input type="number" name="number" min="18" max="30"/>
+            </p>
+            <p>
+                Slider: <input type="range" name="range"/>
+            </p>
+            <p>
+                Url: <input type="url" name="url"/>
+            </p>
+
+            <input type="submit" value="Click Me"/>
+        </form>
+    </section>
+</main>
+<div style="clear:both;"></div>
+<footer>Copyright Notice</footer>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

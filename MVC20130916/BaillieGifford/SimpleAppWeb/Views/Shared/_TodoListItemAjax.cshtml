@@ -1,0 +1,6 @@
+﻿@model TodoViewModel
+
+
+<li>
+    @Ajax.ActionLink(Model.Description, "Get", new { id = Model.Id }, new AjaxOptions{UpdateTargetId = "detailsId"})
+</li>

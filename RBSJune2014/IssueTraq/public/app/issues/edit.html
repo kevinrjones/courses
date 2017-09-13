@@ -1,0 +1,7 @@
+<div>
+    <h2>Edit</h2>
+    <div>Title:</div><div>{{vm.issue.title}}</div>
+    <div>Description</div> <div>{{vm.issue.description}}</div>
+    <div>Completion</div> <div>{{vm.issue.completionDate | date:'fullDate'}}</div>
+    <div><button data-ng-click="vm.update(vm.issue.id)">Edit</button></div>
+</div>

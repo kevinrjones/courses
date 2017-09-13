@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        .female {
+            background-color: coral;
+        }
+
+        .male {
+        }
+
+        .male-color {
+            background-color: hotpink;
+        }
+    </style>
+</head>
+<body>
+
+    <ul id="names">
+        <li class="male" title="boss">Kevin</li>
+        <li class="female">Ashley</li>
+        <li class="female">Laura</li>
+        <li class="male">Neil</li>
+        <li class="female">Natalie</li>
+        <li class="male">Stephen</li>
+        <li class="male">Phil</li>
+        <li class="male">Owen</li>
+    </ul>
+
+    <button id="mybutton">Get Person</button>
+    <p>
+        
+    </p>
+    <p>
+        
+    </p>
+    <form id="myForm" method="get" action="">
+        Name: <input type="text" name="username" id="username" />
+        <br/>
+        <input type="submit" value ="Add User"/>
+    </form>
+
+    <script src="Scripts/jquery-2.0.3.js"></script>
+    <script src="Scripts/jquery.validate.js"></script>
+
+    <script type="text/javascript">
+
+        $.validator.addMethod("isInScoobysGang", function (value, element) {
+            if (this.optional(element)) {
+                return true;
+            }
+            return value == "Fred" || value == "Velma" || value == "Daphne" || value == "Shaggy";
+        }, "This person is not in the gang!");
+
+        $("#myForm").validate({
+            rules: {
+                username: "isInScoobysGang"
+            },
+            messages: {
+                username: "User should be in the gang"
+            }
+        });
+        
+
+        $(function () {
+            $('button').click(function () {
+                $.ajax({
+                    url: "/users/get",
+                    dataType: 'json',
+                    contentType: 'application/json',
+                    type: 'GET'
+                }).done(function (data) {
+                    console.log(data);
+                    $("ul").append($("<li>").text(data.Name));
+                }).error(function () {
+                    alert("error");
+                });
+
+                return false;
+            });
+        });
+
+    </script>
+</body>
+</html>

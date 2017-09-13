@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BaillieGiffordModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="BaillieGiffordModelStoreContainer">
+          <EntitySet Name="Todos" EntityType="BaillieGiffordModel.Store.Todos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Users" EntityType="BaillieGiffordModel.Store.Users" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Todos_Users" Association="BaillieGiffordModel.Store.FK_Todos_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Todos" EntitySet="Todos" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Todos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Priority" Type="int" Nullable="false" />
+          <Property Name="DoBy" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="EMail" Type="nchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK_Todos_Users">
+          <End Role="Users" Type="BaillieGiffordModel.Store.Users" Multiplicity="1" />
+          <End Role="Todos" Type="BaillieGiffordModel.Store.Todos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Todos">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BaillieGiffordModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BaillieGiffordEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Todos" EntityType="BaillieGiffordModel.Todo" />
+          <EntitySet Name="Users" EntityType="BaillieGiffordModel.User" />
+          <AssociationSet Name="FK_Todos_Users" Association="BaillieGiffordModel.FK_Todos_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Todos" EntitySet="Todos" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Todo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Priority" Type="Int32" Nullable="false" />
+          <Property Name="DoBy" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="User" Relationship="BaillieGiffordModel.FK_Todos_Users" FromRole="Todos" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="EMail" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="true" />
+          <NavigationProperty Name="Todos" Relationship="BaillieGiffordModel.FK_Todos_Users" FromRole="Users" ToRole="Todos" />
+        </EntityType>
+        <Association Name="FK_Todos_Users">
+          <End Role="Users" Type="BaillieGiffordModel.User" Multiplicity="1" />
+          <End Role="Todos" Type="BaillieGiffordModel.Todo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Todos">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BaillieGiffordModelStoreContainer" CdmEntityContainer="BaillieGiffordEntities">
+          <EntitySetMapping Name="Todos">
+            <EntityTypeMapping TypeName="BaillieGiffordModel.Todo">
+              <MappingFragment StoreEntitySet="Todos">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="DoBy" ColumnName="DoBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="BaillieGiffordModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="EMail" ColumnName="EMail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

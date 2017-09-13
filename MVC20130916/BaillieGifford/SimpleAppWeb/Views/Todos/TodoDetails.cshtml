@@ -1,0 +1,8 @@
+﻿@model TodoViewModel
+
+
+<h2>@Model.Description</h2>
+
+<div>
+    Priority: <span>@Model.Priority</span> must be done by: @Html.DisplayFor(m => m.DoBy)
+</div>

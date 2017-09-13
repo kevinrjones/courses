@@ -1,0 +1,59 @@
+﻿@model TaskList.Models.TodoViewModel
+@{
+    ViewBag.Title = "title";
+    string placeholderText = "What am I doing?";
+}
+
+<h2>title</h2>
+
+@using (Html.BeginForm("Create", "List", FormMethod.Post, new { id = "newtodo" }))
+{
+    <fieldset>
+        <legend>New Todo</legend>
+        <p>@Html.TextBoxFor(m => m.Todo, new { placeholder = placeholderText }) @Html.ValidationMessageFor(m => m.Todo)</p>
+        <p>@Html.TextBoxFor(m => m.Who) </p>
+        <p>@Html.EditorFor(m => m.When) @Html.ValidationMessageFor(m => m.When)</p>
+        <p>@Html.TextBoxFor(m => m.Days) @Html.ValidationMessageFor(m=>m.Days)</p>
+        <p>@Html.TextBoxFor(m => m.EMail) @Html.ValidationMessageFor(m => m.EMail)</p>
+        <input type="submit" value="Add this" />
+    </fieldset>
+}
+
+<div id="result"></div>
+
+@section scripts
+{
+    <script type="text/javascript">
+
+        $.validator.unobtrusive.adapters.addSingleVal(
+               "maxdays", "days", "maxdays");
+
+        $.validator.addMethod("maxdays",
+           function (value, element, param) {
+               return this.optional(element) || parseInt(value) <= parseInt(param);
+           }
+        );
+
+        //$('#newtodo').validate({
+        //    rules: {
+        //        Who: "required"
+        //    },
+        //    message: {
+        //        Who: "Who are you?"
+        //    }
+        //}
+        //);
+
+        //$(function() {
+        //    $('#newtodo').submit(function() {
+        //        $.post(this.action, $(this).serialize(), function (data) {
+        //            $('#result').text(data.message);
+        //        }, "json");
+
+        //        return false;
+        //    });
+        //});
+
+    </script>
+}
+

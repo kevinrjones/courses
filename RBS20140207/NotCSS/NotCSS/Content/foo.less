@@ -1,0 +1,35 @@
+﻿@maincolor: red;
+@border-color: silver;
+
+body {
+    background-color: @maincolor;
+}
+
+
+.list {
+    border: 1px solid @border-color;
+}
+
+
+ul {
+    li {
+        .list;
+        &.selected {
+            font-size: larger;
+        }
+    }
+}
+
+
+div{
+    span{
+        color: black
+    }
+    ul {
+        color: @maincolor;
+    }
+    &.foo {
+        background-color: green;
+    }
+}
+

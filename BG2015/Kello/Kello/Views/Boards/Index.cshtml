@@ -1,0 +1,18 @@
+﻿@model List<Kello.ViewModels.BoardViewModel>
+@{
+
+}
+
+<div>
+
+    <h1>Hello, World</h1>
+    <h2> @DateTime.Now.ToLongDateString() </h2>
+    <ul>
+        @foreach (var board in Model)
+        {
+            <li>
+                @Html.ActionLink(board.Title, "Show", "Board", new { Id = board.Id }, new { @class="myclass" })
+            </li>
+        }
+    </ul>
+</div>

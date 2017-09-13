@@ -1,0 +1,32 @@
+﻿@model TodoItemCreateViewModel
+@{
+    ViewBag.Title = "New Todo";
+}
+
+<h2>Create New Todo</h2>
+
+@using (Html.BeginForm("Create", "Todos"))
+{
+    @Html.ValidationSummary("Fix these")
+    <div>
+        @Html.LabelFor(m => m.Description): @Html.TextBoxFor(m => m.Description) @Html.ValidationMessageFor(m => m.Description)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Shoes): @Html.TextBoxFor(m => m.Shoes) @Html.ValidationMessageFor(m => m.Shoes)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.GangMember): @Html.TextBoxFor(m => m.GangMember) @Html.ValidationMessageFor(m => m.GangMember)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Priority): @Html.DropDownListFor(m => m.Priority, Model.Priorities)
+    </div>
+    <div>
+        <input type="submit" value="Create" />
+    </div>
+}
+
+@section scripts
+{
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <script src="javascripts/libs/jquery.min.js"></script>
+</head>
+<body>
+<h1><%= title %></h1>
+
+<p>Welcome to <%= title %></p>
+
+<form id="petowner">
+    <p>
+        Name: <input type="text" name="name"/>
+    </p>
+
+    <p>
+        Pet: <select name="pet">
+            <option>Cat</option>
+            <option>Dog</option>
+        </select>
+    </p>
+    <p>
+        <input type="file" name="filename"/>
+    </p>
+    <p>
+        <input type="submit" value="Enter" id="submit"/>
+    </p>
+    <p>
+        <progress id="progress" max="100" value="0"></progress>
+    </p>
+    <div style="height:200px; display: none; background-color: lightyellow" id="done"> Done </div>
+</form>
+<script src="javascripts/app.js"></script>
+</body>
+</html>

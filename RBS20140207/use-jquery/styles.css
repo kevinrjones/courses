@@ -1,0 +1,22 @@
+ul li {
+    list-style: none;
+}
+
+li.male {
+    background-color: lightblue;
+}
+
+li.female {
+    background-color: pink;
+}
+
+#main {
+    border: 1px solid silver;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.highlight{
+    font-family: arial;
+    color: white;
+}

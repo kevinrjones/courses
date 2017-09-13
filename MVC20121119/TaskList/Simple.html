@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript" src="Scripts/jquery-1.8.2.js"></script>
+    <style>
+        .highlight {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+    <body>
+        <ul>
+            <li id="fred">Goodbye cruel world</li>
+            <li>I'm leaving you today</li>
+            <li>Goodbye, goodbye, goodbye!</li>
+        </ul>
+        <div class="foo"></div>
+        <div class="foo"></div>
+        <form>
+            Check me: <input type="checkbox"/><br/>
+            Enter text: <input type="text" value="empty"/>
+        </form>
+    </body>
+    <script type="text/javascript">
+        $(function () {
+            $('ul li').click(function () {
+                alert('goodbye');
+            });
+        });
+    </script>
+</html>

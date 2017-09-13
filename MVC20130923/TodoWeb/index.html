@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="Content/Site.css" rel="stylesheet" />
+    <script src="Scripts/jquery-2.0.3.js"></script>
+    <script src="Scripts/jquery.validate.js"></script>
+</head>
+<body>
+    <ul id="namelist" class="listclass">
+        <li class="norwegian">Atle</li>
+        <li female>Dominique</li>
+        <li class="norwegian">Jon</li>
+        <li class="norwegian">B&aring;rd</li>
+        <li>Kev</li>
+        <li>Colin</li>
+        <li>David</li>
+        <li>Craig</li>
+    </ul>
+
+    <form id="addStudent" action="" method="">
+        <div>
+            Name:
+            <input type="text" id="studentName" name="studentName" />
+        </div>
+        <div>
+            <input type="submit" value="Add Student" />
+        </div>
+    </form>
+
+</body>
+<script type="text/javascript">
+
+    $('#addStudent').validate(
+        {
+            rules: { studentName: "required" },
+            messages: { studentName: "this field is required" }
+        }
+    );
+
+    $(function () {
+        $('ul li:first').click(function (e) {
+            $.ajax({
+                url: '/student/details',
+                type: 'GET',
+                dataType: 'json'
+            }).done(function (data) {
+                console.log(data.name);
+            }).error(function () {
+            }).always(function () {
+                console.log("wohoo!");
+            });
+
+
+            return false;
+        });
+        $('ul').click(function () { console.log("clicked ul"); });
+    });
+</script>
+</html>

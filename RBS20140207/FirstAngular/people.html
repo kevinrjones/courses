@@ -1,0 +1,24 @@
+<div data-dm-simple="Terry"></div>
+
+<data-dm-other person="{{person.name}}"></data-dm-other>
+
+<span>{{ person.name }}</span>
+
+<ul>
+    <li data-ng-repeat="p in people">
+        <a ng-href="#/person/{{p.id}}">{{ p.name }}</a></li>
+</ul>
+
+<dm-zippy header="Hello Zippy">Content</dm-zippy>
+
+<input ng-model="data.bar"/>
+<div data-ng-controller="Controller1">
+    <input ng-model="data.bar"/>
+    {{data.bar}}
+</div>
+<div data-ng-controller="Controller2">
+    <input ng-model="data.bar"/>
+    {{data.bar}}
+</div>
+<!--<input ng-model="data.foo"/>{{data.foo}}-->
+<!--<div data-ng-controller="Controller2">{{data.foo}}</div>-->

@@ -1,0 +1,80 @@
+﻿@model CreateTodoViewModel
+
+@{
+    ViewBag.Title = "New Todo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Todo</h2>
+
+@using (Html.BeginForm("Create", "Todo", FormMethod.Post, new { id = "myform" }))
+{
+    <div>
+        What:
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.WhatToDo, new { placeholder = "What to do" }) @Html.ValidationMessageFor(m => m.WhatToDo)
+    </div>
+    <div>
+        Who:
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.Who) @Html.ValidationMessageFor(m => m.Who)
+    </div>
+    <div>
+        Number of days:
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.NumberOfDays, new { placeholder = "How many days?" }) @Html.ValidationMessageFor(m => m.NumberOfDays)
+    </div>
+    <div>
+        When:
+    </div>
+    <div>
+        @*@Html.TextBoxFor(m => m.WhenToDoIt, Model.WhenToDoIt.ToShortDateString(), new {placeholder = "When to do it", @class="dateTime"})*@
+        @Html.EditorFor(m => m.WhenToDoIt, "DateTime")
+    </div>
+    <div>
+        Some other field
+    </div>
+    <div>
+        <input type="text" id="other" name="other" />
+        @Html.ValidationMessage("other")
+    </div>
+    <div>
+        <input type="submit" value="Add todo" />
+    </div>
+}
+
+@section scripts{
+    <script type="text/javascript">
+        /// moved to valiationscript.js
+        $.validator.unobtrusive.adapters.addSingleVal(
+                           "maxdays", "howlong", "maxDaysValidator");
+
+        $.validator.addMethod("maxDaysValidator",
+           function (value, element, param) {
+               return this.optional(element) || parseInt(value) <= parseInt(param);
+           }
+        );
+
+        // this adds to the unobtrusive validation
+        // but you also need the Html.ValidationMessage helper
+        $(function () {
+            $('#myform input[id="other"]').rules("add", {
+                required: true,
+                messages: {
+                    required: "Required input"
+                }
+            });
+        });
+        // moved to valiationscript.js
+
+        // this overwrites the unobtrusive validation
+        //$('#myform').validate({
+        //    rules: { other: "required" },
+        //    messages: {other: 'this field is required'}
+        //});
+
+    </script>
+}

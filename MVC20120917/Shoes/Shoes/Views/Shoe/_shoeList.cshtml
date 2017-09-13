@@ -1,0 +1,4 @@
+﻿@model Shoes.Models.DisplayShoeVM
+<li>@Html.ActionLink(@Model.Colour, "Show", "Shoe", new { id = Model.Id }, new { @class = "shoeList" })
+    : @Model.Type: @Model.Size : @Html.DisplayFor(m => m.OwnerEmail) : @Html.DisplayFor(m => m.OrderedOn)
+</li>

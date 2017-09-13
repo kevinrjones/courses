@@ -1,0 +1,25 @@
+﻿@model CreateMovieViewModel
+@{
+    ViewBag.Title = "My Movies Database - New";
+}
+
+<h2>Add New Movie</h2>
+
+
+@using (Html.BeginForm("Create", "Movies"))
+{
+    <p>
+        
+        Title: @Html.TextBoxFor(m => m.Title, "", new { Placeholder = "Movie Title" }) @Html.ValidationMessageFor(m=>m.Title)
+    </p>
+    <p>        
+        @Html.LabelFor(m => m.Director): @Html.TextBoxFor(m => m.Director) @Html.ValidationMessageFor(m => m.Director)
+    </p>
+    <p>
+        @Html.DisplayFor(m => m.ContactMe)
+    </p>
+    <p>
+        @Html.DisplayFor(m => m.User, Model.User)
+    </p>
+    <input type="submit" value="Add movie" />
+}

@@ -1,0 +1,36 @@
+﻿@model IEnumerable<UserModel>
+
+@{
+}
+
+<style>
+    #getdetails { cursor: pointer;}
+</style>
+
+<script type="text/javascript">
+
+    $(function () {
+        $('#getdetails').click(function () {
+            $.post('@Url.Action("Users")',  { id: 1 }, function (results) {
+                $(results).each(function () {
+                    $('#resultlist').append($('<li>').text(this.Name));
+                });
+            }, "json");
+        });
+    });
+
+</script>
+
+<div>
+    <ul>
+        @foreach (var userModel in Model)
+        {
+            <li>@Ajax.ActionLink(userModel.Name, "details", new{id=userModel.Id}, new AjaxOptions{UpdateTargetId = "details"}) </li>
+        }
+    </ul>
+    <span id="getdetails">Get Details</span>
+</div>
+
+<div id="details"></div>
+
+<ul id="resultlist"></ul>

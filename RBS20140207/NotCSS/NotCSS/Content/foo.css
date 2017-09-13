@@ -1,0 +1,21 @@
+body {
+  background-color: #ff0000;
+}
+.list {
+  border: 1px solid #c0c0c0;
+}
+ul li {
+  border: 1px solid #c0c0c0;
+}
+ul li.selected {
+  font-size: larger;
+}
+div span {
+  color: #000000;
+}
+div ul {
+  color: #ff0000;
+}
+div.foo {
+  background-color: green;
+}

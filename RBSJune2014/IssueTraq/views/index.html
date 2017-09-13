@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/"/>
+    <title>Issue Traq</title>
+
+    <link href="/bower/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+    <link href="/bower/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet"/>
+    <link href="/stylesheets/style.css" rel="stylesheet"/>
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body data-ng-app="app">
+<div class="container">
+    <header class="top" role="header">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Issue Traq</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </header>
+    <div data-ng-view>
+
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="/bower/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="/bower/bootstrap/dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="/bower/angular/angular.js"></script>
+<script type="text/javascript" src="/bower/angular-route/angular-route.js"></script>
+<script type="text/javascript" src="/bower/angular-resource/angular-resource.js"></script>
+<script type="text/javascript" src="/app/app.js"></script>
+</body>
+</html>

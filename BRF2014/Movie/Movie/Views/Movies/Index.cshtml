@@ -1,0 +1,23 @@
+﻿@model IList<MovieViewModel>
+
+@{
+    ViewBag.Title = "My Movies Database";
+}
+
+<h2>Hello World: @DateTime.Now.ToLongDateString()</h2>
+
+<ul>
+    @foreach (var movie in Model)
+    {
+        @Html.Partial("_MovieActionLink", movie)
+    }
+</ul>
+
+@Html.ActionLink("Add Movie", "New")
+<div class="kevin">
+    <p>This is the text</p>
+</div>
+
+@section scripts {
+    <script src="~/Scripts/foo.js"></script>
+}
