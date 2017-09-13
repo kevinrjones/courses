@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a0dcff565461404cacf08512e0eabe90" Name="Diagram1" ZoomLevel="120">
+        <EntityTypeShape EntityType="CricketModel.BattingDetail" Width="1.5" PointX="8.25" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="CricketModel.BowlingDetail" Width="1.5" PointX="5.25" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CricketModel.CloseOfPlay" Width="1.5" PointX="5.25" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CricketModel.Country" Width="1.5" PointX="0.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CricketModel.FallOfWicket" Width="1.5" PointX="7.5" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CricketModel.FowPlayer" Width="1.5" PointX="9.75" PointY="26.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CricketModel.Innings" Width="1.5" PointX="5.25" PointY="26.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CricketModel.Match" Width="1.5" PointX="3" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CricketModel.Player" Width="1.5" PointX="3" PointY="26.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CricketModel.VictoryType" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CricketModel.Ground" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CricketModel.RenamedPlayer" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="CricketModel.FK_BATTING_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="CricketModel.FK_BATTING_PLAYER" ManuallyRouted="false" />
+        <AssociationConnector Association="CricketModel.FK_BOWLING_COUNTRY" ManuallyRouted="false" />
+        <AssociationConnector Association="CricketModel.FK_BOWLING_MATCH" ManuallyRouted="false" />
+        <AssociationConnector Association="CricketModel.FK_BOWLING_PLAYER" ManuallyRouted="false" />
+        <AssociationConnector Association="CricketModel.FK_CLOSE_OF_PLAY_MATCH" ManuallyRouted="false" />
+        <AssociationConnector Association="CricketModel.FK_MATCH_COUNTRY_AWAY" ManuallyRouted="false" />
+        <AssociationConnector Association="CricketModel.FK_MATCH_COUNTRY_HOME" ManuallyRouted="false" />
+        <AssociationConnector Association="CricketModel.FK_MATCH_COUNTRY_TOSS" ManuallyRouted="false" />
+        <AssociationConnector Association="CricketModel.FK_MATCH_COUNTRY_WHO_WON" ManuallyRouted="false" />
+        <AssociationConnector Association="CricketModel.FK_FOW_INNINGS" ManuallyRouted="false" />
+        <AssociationConnector Association="CricketModel.FK_FOW_MATCH" ManuallyRouted="false" />
+        <AssociationConnector Association="CricketModel.FK_FOWPLAYER_FOW" ManuallyRouted="false" />
+        <AssociationConnector Association="CricketModel.FK_FOWPLAYER_PLAYER" ManuallyRouted="false" />
+        <AssociationConnector Association="CricketModel.FK_INNINGS_MATCH" ManuallyRouted="false" />
+        <AssociationConnector Association="CricketModel.PlayerCountries" ManuallyRouted="false" />
+        <AssociationConnector Association="CricketModel.FK_BattingDetails_Opponents" />
+        <AssociationConnector Association="CricketModel.FK_BattingDetails_Match" />
+        <AssociationConnector Association="CricketModel.FK_BowlingDetails_BowlingDetails" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

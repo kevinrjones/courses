@@ -1,0 +1,18 @@
+﻿
+.anchor {
+    font-size: xx-large;
+}
+
+.field-validation-error { color: #f00; }
+
+.field-validation-valid { display: none; }
+
+.input-validation-error {
+    background-color: #fee;
+    border: 1px solid #f00;
+}
+
+.validation-summary-errors {
+    color: #f00;
+    font-weight: bold;
+}

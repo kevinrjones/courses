@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-2.1.1.js"></script>
+    <script src="Scripts/knockout-3.2.0.js"></script>
+    <script src="Scripts/app.js"></script>
+    
+</head>
+    <body>
+        <div>
+            <span data-bind="text: fullName">Name</span>
+            <span data-bind="text: age">Age</span>
+        </div>
+        <div>
+            <input type="text" data-bind="textInput: firstName" />
+            <input type="text" data-bind="textInput: lastName" />
+            <input type="text" data-bind="textInput: age" />
+        </div>
+        
+        <div>
+            <ul data-bind="foreach: pets">
+                <li data-bind="text: $data"></li>
+            </ul>
+        </div>
+
+        <div data-bind="visible: married">
+            <ul data-bind="foreach: children">
+                <li><span data-bind="text: name"></span> <button data-bind="click: $parent.leave">Left Home</button></li>
+            </ul>
+            <input type="text" data-bind="textInput:childName" />
+            <p>
+                <button data-bind="click: addChild">Add Child</button>
+            </p>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

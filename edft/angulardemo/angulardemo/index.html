@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.css" rel="stylesheet" />
+</head>
+<body ng-app="seasonTicket" ng-controller="seasonTicketCtrl as app">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-2 col-xs-12">
+                <div>{{message}}</div>
+                <input type="text" ng-model="app.message" />
+
+                <dm-user msg="{{message}}" show="showMe()"></dm-user>
+                <dm-user></dm-user>
+
+
+            </div>
+            <div class="col-sm-6">
+
+                <div>
+                    Season Ticket: Name is {{ ticket.owner }}
+                </div>
+                <div>
+                    Change Me <input type="text" ng-model="ticket.owner" />
+                </div>
+                <ul>
+                    <li ng-repeat="country in countries">{{ country.name }}</li>
+                </ul>
+                <div ng-view>
+
+                </div>
+                <span class="glyphicon glyphicon-search"></span>
+
+                <button class="btn btn-primary" ng-click="addCountry()">Click Me</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="name" class="col-sm-2 control-label">Name</label>
+                        <div class="col-sm-10">
+                            <input id="name" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </div>
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/services.js"></script>
+    <script src="scripts/jquery-2.1.1.js"></script>
+    <!--<script src="scripts/bootstrap.js"></script>-->
+</body>
+</html>

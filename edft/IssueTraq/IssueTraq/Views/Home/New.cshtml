@@ -1,0 +1,19 @@
+﻿@model IssueTraq.Models.Issue
+
+@using (Html.BeginForm("Create", "Home", FormMethod.Post,
+    new { Id = "addForm" }))
+{
+    <p>
+        @Html.LabelFor(m => m.Title) :
+        @Html.TextBoxFor(m => m.Title, new { placeholder = "Title" })
+        @Html.ValidationMessageFor(m => m.Title)
+    </p>
+    <p>
+        @Html.LabelFor(m => m.Description) :
+        @Html.TextBoxFor(m => m.Description, new { placeholder = "Description" })
+    </p>
+
+    <p>
+        <input type="submit" value="Click Me" />
+    </p>
+}

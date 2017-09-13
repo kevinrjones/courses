@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="Content/styles.css" rel="stylesheet"/>
+</head>
+<body>
+
+<ul id="teams" class="one">
+    <li>Brazil</li>
+    <li>Argentina</li>
+    <li>Spain</li>
+    <li>Germany</li>
+</ul>
+<button id="switch">Switch</button>
+
+<div id="draggable">
+    <div id="d1" class="dropme">
+        <div class="header">A</div>
+        <div class="body"></div>
+    </div>
+    <div id="d2" class="dropme">
+        <div class="header">B</div>
+        <div class="body"></div>
+    </div>
+    <div id="d3">
+        <div class="header">C</div>
+        <div class="body"></div>
+    </div>
+    <div style="clear: both"></div>
+    <div id="droppable" class="transparent">
+        Trash
+    </div>
+</div>
+
+<ul id="sortable">
+    <li>RBS</li>
+    <li>Barclays</li>
+    <li>Lloyds</li>
+    <li>HSBC</li>
+</ul>
+<script src="Scripts/jquery-2.1.1.js"></script>
+<script src="Scripts/jquery-ui-1.11.1.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+﻿@model IssueTraq.Models.ProductDetails
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>title</h2>
+
+@using (Html.BeginForm("Create", "Product"))
+{
+    <p>
+        <label>Name: </label>@Html.TextBoxFor(m => m.Name)
+    </p>
+    <p>
+        <input type="text" id="orderName"/> <button id="addOrder">Add Order</button>
+    </p>
+    <div id="addOrderDiv">
+        
+    </div>
+    <p>
+        <input type="submit" value="Submit"/>
+    </p>
+}

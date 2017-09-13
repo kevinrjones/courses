@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Cricket</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div id="cricket">
+            @*<h2 data-bind="text: title"></h2>*@
+        </div>
+        <p>
+            <div id='jqxWidget'>
+                <div data-bind="updateSelection: selectedRow" id="playersGrid">
+                </div>
+                <div style="margin-top: 10px;">
+                </div>
+                <div id="battingDetailsGrid">
+                </div>
+                <div style="margin-top: 10px;">
+                </div>
+            </div>
+        </p>
+    </div>
+</div>
